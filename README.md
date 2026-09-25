@@ -1,74 +1,31 @@
-# Rahul's Product Lab
+# Open Product & Engineering Skills
 
-I use this repo as a small public record of how I think about products and how I am learning to build with AI.
+A sanitized collection of reusable skills for product, writing, design, Jira, pull requests, prototyping, verification, and knowledge management.
 
-This is deliberately sanitised. I do not publish employer data, internal documents, customer data, private code, or implementation details here.
+These skills are intentionally company-agnostic. They contain no employer-specific workflows, internal product names, private URLs, customer data, or proprietary implementation details.
 
-## How I think about product
+## Skills
 
-### 1. User behaviour over assumed behaviour
+- [`bro`](./bro/SKILL.md) — restate dense responses in plain language.
+- [`build-product-knowledge-vault`](./build-product-knowledge-vault/SKILL.md) — build source-linked product and code knowledge vaults.
+- [`building-product-prototypes`](./building-product-prototypes/SKILL.md) — build staged, reviewable product prototypes using the target product's design system.
+- [`create-jira-ticket`](./create-jira-ticket/SKILL.md) — investigate, draft, create, and verify Jira issues.
+- [`diagram-design`](./diagram-design/SKILL.md) — design clear product, process, architecture, data, and state diagrams.
+- [`grill-ticket-before-code`](./grill-ticket-before-code/SKILL.md) — audit a ticket against code and tests before implementation.
+- [`humanise`](./humanise/SKILL.md) — rewrite drafts in a natural, reader-appropriate voice.
+- [`raise-pr`](./raise-pr/SKILL.md) — prepare, validate, create, and verify pull requests.
+- [`reconcile-ticket-pr-feedback`](./reconcile-ticket-pr-feedback/SKILL.md) — reconcile ticket, code, test, and review evidence.
+- [`slop-killer`](./slop-killer/SKILL.md) — remove generic AI-sounding filler and repetition.
+- [`verify-and-report-jira`](./verify-and-report-jira/SKILL.md) — verify changes against acceptance criteria and prepare evidence-backed Jira updates.
 
-I like going back to what users are actually trying to do, especially when the standard product flow says otherwise.
+## Public-repo policy
 
-In lending work, user conversations changed how I thought about the decision itself: for smaller-ticket EMI decisions, many users were thinking about a comfortable monthly outflow rather than optimising interest mathematics. That changed the UX direction we pushed for.
+- No employer or client-specific workflows.
+- No internal product names, private domains, email addresses, credentials, customer data, or proprietary identifiers.
+- Examples use generic names and synthetic values.
+- Product-specific test kits and internal-only skills from the source pack are intentionally excluded.
+- Large demo/example galleries are omitted when the reusable skill can remain self-contained without them.
 
-In another card journey, funnel data gave us part of the answer. Conversations with drop-off users gave us the missing part: users did not clearly understand the value proposition. The product and communication changed after that.
+## Structure
 
-### 2. Build to learn
-
-I increasingly prefer something people can click over a long discussion about what a product might feel like.
-
-At work, I started using coded prototypes alongside PRDs and used a working lending prototype directly in engineering grooming. Outside work, I am building small products and experiments myself with AI-assisted development.
-
-### 3. Systems over repeated manual work
-
-If the same PM work keeps repeating, I try to turn it into a reusable system.
-
-Internally I have worked on reusable AI skills for GTM planning, edge-case auditing and product capability mapping; MCP-based Jira story creation; transcript-assisted PRD updates; and structured frameworks for error handling and testing.
-
-### 4. AI as leverage, not a label
-
-I am interested in AI mainly because it changes how much one person or a small team can do.
-
-My own workflow has moved from using AI for answers to using it across research, analysis, prototyping, documentation, testing, story creation and product iteration. I am still early in that transition and want to go much deeper.
-
-## Public builds
-
-### [Stories](https://github.com/Rahulm38/Stories)
-
-Android-first app for helping people build a bank of personal moments and ideas they can actually remember and tell.
-
-The core loop is **Discover → Remember → Tell**. The product deliberately avoids streaks, scores, AI rewriting and unnecessary organisation in the core experience. The focus is the real-world outcome: can the person naturally remember and use the story when the opportunity comes?
-
-Recent product work included hardening reminders, recall scheduling and capture reliability, followed by a second pass focused on the full storyteller outcome loop and real-world `I told this` behaviour.
-
-### [KFS Validator](https://github.com/Rahulm38/KFSvalidation)
-
-A static web app for generating, previewing and validating Key Fact Statements across 16 Indian languages, including RTL handling, repayment schedules, EMI/APR calculations and downloadable outputs.
-
-### [MyFinance](https://github.com/Rahulm38/MyFinance)
-
-A coded consumer-finance prototype exploring a single place for documents, credit information, loan discovery, reports and an AI assistant.
-
-## Work patterns I can talk about
-
-These are intentionally kept at a high level because the underlying work is internal.
-
-- User research translated into product and UX decisions, not just research reports.
-- Funnel analysis combined with qualitative user calls to find problems analytics could not explain alone.
-- Reusable PM AI skills instead of one-off prompts.
-- MCP-assisted Jira story creation and faster PRD/story synchronisation.
-- Coded prototypes used during product discovery and grooming.
-- Large error surfaces converted into reusable design and engineering patterns.
-- Product analytics designed around fewer, structured events rather than event sprawl.
-- Privacy-safe analysis of backend and behavioural data for stakeholder decision-making.
-
-I have received multiple internal recognitions for product impact across different review cycles.
-
-## What I am still improving
-
-I am not trying to present myself as finished.
-
-I want to get sharper at communication in large rooms, go deeper into technical and commercial fundamentals, and move from AI skills/workflows into more autonomous agentic systems.
-
-That is also why I keep building.
+Each skill keeps its main instructions in `SKILL.md`. Some skills also include an `agents/openai.yaml`, evals, or small references when those materially improve the reusable workflow.
