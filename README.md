@@ -29,3 +29,16 @@ These skills are intentionally company-agnostic. They contain no employer-specif
 ## Structure
 
 Each skill keeps its main instructions in `SKILL.md`. Some skills also include an `agents/openai.yaml`, evals, or small references when those materially improve the reusable workflow.
+
+
+## License and reuse
+
+The [MIT license](LICENSE) applies only to original code and documentation identified in [LICENSE_SCOPE.md](LICENSE_SCOPE.md). Synthetic evaluation fixtures and third-party material are excluded. Read [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) before reusing assets, names, or linked material. MIT permits reuse of covered material when its notice is preserved; it does not grant rights to excluded material.
+
+## Privacy and security
+
+The catalog is static and has no project-owned upload, account, or analytics features. GitHub Pages logs visitor IP addresses for security. Do not publish private work material, customer data, or credentials in this repository or its public issues. See [PRIVACY.md](PRIVACY.md) and [SECURITY.md](SECURITY.md).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) before proposing changes.
