@@ -1,0 +1,4 @@
+interface:
+  display_name: "Raise PR"
+  short_description: "Create a verified, reviewable pull request"
+  default_prompt: "Use $raise-pr to verify this change, prepare a clean PR, create it when authorized, and report the evidence."

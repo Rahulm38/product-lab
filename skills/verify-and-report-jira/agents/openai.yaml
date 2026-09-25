@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify and Report Jira"
+  short_description: "Verify changes and draft Jira evidence"
+  default_prompt: "Use $verify-and-report-jira to verify this change against its Jira acceptance criteria and prepare an evidence-backed comment for my approval."

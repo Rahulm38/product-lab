@@ -1,0 +1,60 @@
+{
+  "skill_name": "grill-ticket-before-code",
+  "evals": [
+    {
+      "id": "paginated-empty-state",
+      "prompt": "Use $grill-ticket-before-code to assess a ticket requesting a global empty state in a paginated, filterable screen with existing alternate outcomes and analytics. Inspect the ticket, repository, tests, and open PR; do not edit code.",
+      "expectations": [
+        "Separates terminal global empty from an empty page and empty filtered result",
+        "Identifies preserved alternate outcomes and navigation",
+        "Checks analytics timing and duplication",
+        "Produces evidence, inference, unknowns, a bounded behavior matrix, and STOP or GO"
+      ]
+    },
+    {
+      "id": "sparse-retry-ticket",
+      "prompt": "Use $grill-ticket-before-code on a ticket that only says 'show retry when loading fails.' Inspect current behavior and tests, then return readiness and missing coverage without editing.",
+      "expectations": [
+        "Reconstructs loading, failure, retry, recovery, and navigation from evidence",
+        "Does not invent acceptance criteria",
+        "Separates blockers from conservative assumptions",
+        "Returns STOP when product behavior remains materially ambiguous"
+      ]
+    },
+    {
+      "id": "conflicting-pr-comments",
+      "prompt": "Use $grill-ticket-before-code to assess an existing PR whose review comments conflict about cached data and whose CI has one failure. Preserve existing workflows and recommend next steps.",
+      "expectations": [
+        "Treats comments as claims rather than facts",
+        "Reconciles ticket, current diff, tests, runtime behavior, and CI",
+        "Labels relevant, unrelated, and unresolved failures with evidence",
+        "Does not edit before the gate"
+      ]
+    },
+    {
+      "id": "missing-authoritative-contract",
+      "prompt": "Use $grill-ticket-before-code on an integration ticket whose implementation needs producer response fields, event lifecycle semantics, and sensitive-data rules. The repository contains consumer models and an old design diagram, but no current versioned contract or owner decision.",
+      "expectations": [
+        "Searches ticket links, authoritative documents, code, tests, and available runtime evidence before asking questions",
+        "Does not infer the producer contract from consumer models, enums, old tickets, diagrams, or internal source data",
+        "Asks targeted questions for the exact response shape, lifecycle owner, and sensitive-data policy",
+        "Names the expected owner or authoritative source and explains the implementation impact of each answer",
+        "Records unanswered items in an open-questions table",
+        "Returns STOP and does not propose or edit code while blocking answers are missing"
+      ]
+    },
+    {
+      "id": "minimal-monitoring-change",
+      "prompt": "Grill a monitoring ticket whose only requested outcome is to add one available diagnostic property to an existing analytics event. The audit also finds unrelated retry, navigation, parser, and extra-property opportunities.",
+      "expectations": [
+        "Keeps the proposed production change limited to the requested diagnostic property and existing event contract",
+        "Distinguishes the event name from property keys and property values",
+        "Asks in chat before adding unrelated findings or broadening scope",
+        "Places human-readable behavior and impact before technical evidence",
+        "Splits acceptance criteria into New change and Sanity or existing flows",
+        "Includes the applicable happy path and touched retry or terminal flows only as unchanged sanity checks",
+        "Uses independently testable criteria and excludes non-applicable cases"
+      ]
+    }
+  ]
+}

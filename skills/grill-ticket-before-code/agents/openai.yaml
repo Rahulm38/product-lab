@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grill Ticket Before Code"
+  short_description: "Audit ticket coverage before implementation"
+  default_prompt: "Use $grill-ticket-before-code to investigate this ticket, ask targeted questions for authoritative gaps, record unresolved decisions, and return the correct ticket and implementation gates."

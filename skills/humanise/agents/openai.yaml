@@ -1,0 +1,4 @@
+interface:
+  display_name: "Humanise"
+  short_description: "Make writing natural and reader-appropriate"
+  default_prompt: "Use $humanise to rewrite this in a natural voice for the intended reader and channel."

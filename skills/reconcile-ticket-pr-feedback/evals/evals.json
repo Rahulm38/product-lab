@@ -1,0 +1,35 @@
+{
+  "skill_name": "reconcile-ticket-pr-feedback",
+  "evals": [
+    {
+      "id": "pagination-contradiction",
+      "prompt": "Use $reconcile-ticket-pr-feedback to inspect a ticket, linked PR, all review comments, local branch, and tests. A reviewer says an empty state appears before pagination completes. Do not change anything.",
+      "expectations": [
+        "Composes the ticket grill and thread-aware PR review reads before edits",
+        "Compares hosted and local state",
+        "Builds a bounded claim-evidence matrix",
+        "Classifies every selected review thread and preserves related workflows"
+      ]
+    },
+    {
+      "id": "stale-and-misunderstood",
+      "prompt": "Use $reconcile-ticket-pr-feedback on a PR with comments predating later commits, a reviewer assumption about a data source, local changes, and red CI.",
+      "expectations": [
+        "Compares current PR head, local HEAD, merge-base, and worktree",
+        "Verifies the true data source",
+        "Separates actionable, stale, misunderstanding, and out-of-scope comments",
+        "Investigates CI evidence without mutating code or external systems"
+      ]
+    },
+    {
+      "id": "incomplete-ticket",
+      "prompt": "Use $reconcile-ticket-pr-feedback to assess a happy-path-only ticket and PR while existing filters, retry, navigation, and analytics must not regress.",
+      "expectations": [
+        "Separates explicit requirements from regression hypotheses",
+        "Identifies requirement gaps and test gaps independently",
+        "Maps every plan item to evidence",
+        "Asks only product questions that source evidence cannot answer"
+      ]
+    }
+  ]
+}

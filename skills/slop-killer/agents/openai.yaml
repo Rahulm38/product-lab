@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slop Killer"
+  short_description: "Remove generic AI-sounding writing"
+  default_prompt: "Use $slop-killer to remove AI-sounding filler and make this read like a real person wrote it."

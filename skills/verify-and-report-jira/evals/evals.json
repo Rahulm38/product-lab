@@ -1,0 +1,35 @@
+{
+  "skill_name": "verify-and-report-jira",
+  "evals": [
+    {
+      "id": "fully-verified-change",
+      "prompt": "Use $verify-and-report-jira to verify a completed change against its issue, PR, repository, test output, and recorded manual scenarios. Prepare but do not publish the Jira update.",
+      "expectations": [
+        "Maps requirements and preserved flows to direct evidence",
+        "Uses only VERIFIED, NOT TESTED, BLOCKED, and FAILED",
+        "Records automated and manual environments",
+        "Shows the exact draft and pauses before posting"
+      ]
+    },
+    {
+      "id": "focused-pass-full-fail",
+      "prompt": "Use $verify-and-report-jira when focused tests pass but the full suite has failures. Draft an accurate verification comment.",
+      "expectations": [
+        "Investigates whether broader failures are related, unrelated, or unresolved",
+        "Does not equate focused success with complete verification",
+        "Identifies missing manual and regression evidence",
+        "Makes no Jira mutation"
+      ]
+    },
+    {
+      "id": "approved-posting",
+      "prompt": "Use $verify-and-report-jira to draft a comment. Only after a later explicit approval, post it to the exact issue and confirm visibility.",
+      "expectations": [
+        "Drafts before mutation",
+        "Treats only later explicit approval as authority",
+        "Changes no other issue fields",
+        "Re-reads the comment or issue and reports confirmed identifiers"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Product Knowledge Vault"
+  short_description: "Build source-linked product knowledge vaults"
+  default_prompt: "Use $build-product-knowledge-vault to build or refactor a source-linked product-and-code knowledge vault for this feature."

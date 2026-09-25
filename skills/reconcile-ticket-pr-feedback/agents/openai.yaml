@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reconcile Ticket and PR Feedback"
+  short_description: "Reconcile ticket, code, tests, and review evidence"
+  default_prompt: "Use $reconcile-ticket-pr-feedback to reconcile this ticket, PR feedback, local code, and tests before proposing changes."

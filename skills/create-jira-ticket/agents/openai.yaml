@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Jira Ticket"
+  short_description: "Create verified, code-backed Jira tickets"
+  default_prompt: "Use $create-jira-ticket to investigate this request, ask targeted questions for authoritative gaps, record unresolved decisions, and create or stop at the correct ticket and implementation gates."

@@ -1,0 +1,138 @@
+{
+  "skill_name": "create-jira-ticket",
+  "evals": [
+    {
+      "id": "code-backed-bug-with-epic",
+      "prompt": "Use $create-jira-ticket to create a bug under EPIC-42 because documented response data is lost before an operational event. Inspect the repository and Jira first.",
+      "expectations": [
+        "Reads the parent and comparable tickets, searches duplicates, and fetches live create metadata",
+        "Traces response, mapping, state, analytics, and tests with evidence",
+        "Does not invent backend fields that are absent from source evidence",
+        "Creates once and re-reads the issue to verify parent and required fields"
+      ]
+    },
+    {
+      "id": "draft-only-boundary",
+      "prompt": "Use $create-jira-ticket to investigate this crash and draft a Jira bug, but do not create it.",
+      "expectations": [
+        "Produces a complete copyable draft without writing to Jira",
+        "Separates evidence, inference, and unknowns",
+        "Includes required-field recommendations only after reading metadata",
+        "Clearly states that no issue was created"
+      ]
+    },
+    {
+      "id": "duplicate-detection",
+      "prompt": "Create a Jira issue for a failure-side effect missing a documented attribute; an older open integration bug may already cover it.",
+      "expectations": [
+        "Searches using event, lifecycle, and attribute terms and reads plausible matches",
+        "Does not create when an open issue has equivalent scope and acceptance criteria",
+        "Creates a focused issue only when the data-loss path is materially distinct",
+        "Reports the existing or newly created issue link"
+      ]
+    },
+    {
+      "id": "ambiguous-parent-key",
+      "prompt": "Create this bug in APP under platform initiative 1440; APP-1440 and CORE-1440 both exist.",
+      "expectations": [
+        "Resolves the exact parent from Jira context rather than guessing",
+        "Returns STOP and asks one concise question if the intended parent remains ambiguous",
+        "Does not create under a similarly numbered issue",
+        "Preserves a complete draft while blocked"
+      ]
+    },
+    {
+      "id": "uncertain-create-response",
+      "prompt": "Create the verified ticket; the Jira create call times out after submission.",
+      "expectations": [
+        "Searches recent issues by exact summary before retrying",
+        "Avoids duplicate creation",
+        "Re-reads any matching issue and verifies key fields",
+        "Reports uncertainty honestly if Jira state cannot be confirmed"
+      ]
+    },
+    {
+      "id": "story-not-bug",
+      "prompt": "Create a Jira story under EPIC-9 for a new saved-filter capability using the repository and product notes.",
+      "expectations": [
+        "Uses story structure with outcome, scope, non-goals, dependencies, acceptance criteria, and verification",
+        "Fetches metadata for Story rather than reusing Bug fields",
+        "Keeps unsupported product decisions as unknowns",
+        "Creates and verifies the requested hierarchy and issue type"
+      ]
+    },
+    {
+      "id": "contract-boundary-and-parser-gap",
+      "prompt": "Use $create-jira-ticket and the grill skill to update an integration bug. An internal producer has diagnostic context that is absent from the versioned consumer contract. Separately, the consumer parser rejects the contract's smallest valid error response because it requires an optional metadata object.",
+      "expectations": [
+        "Separates internal producer data from the authoritative consumer-facing contract",
+        "Records producer contract exposure as a dependency rather than blaming the consumer",
+        "Identifies rejection of the smallest valid response as a concrete consumer parser defect",
+        "Treats conceptual design guidance as intent rather than runtime contract evidence",
+        "Covers minimal, extended, malformed, null, and unknown inputs",
+        "Allows ticket correction while stopping implementation that would require invented contract fields"
+      ]
+    },
+    {
+      "id": "observability-lifecycle-and-safety",
+      "prompt": "Create or update a bug where the same failed operation may be recorded once by the outcome handler and again by an error-view impression. Diagnostic text may contain sensitive or unbounded data, and retry semantics are not documented.",
+      "expectations": [
+        "Defines one canonical outcome and distinguishes it from any separately named impression",
+        "Requires duplicate prevention across alternate entry points",
+        "Records retry semantics as a decision when authoritative evidence is absent",
+        "Requires allowlisting, sanitization, size bounds, and omission of unavailable optional data",
+        "Preserves success behavior and keeps observability failures non-blocking",
+        "Uses a readable behavior or ownership table and descriptive Markdown source links"
+      ]
+    },
+    {
+      "id": "bounded-read-only-delegation",
+      "prompt": "Use $create-jira-ticket and delegate the grill investigation to subagents before updating this complex bug.",
+      "expectations": [
+        "Delegates independent Jira, implementation, and contract-risk research as read-only lanes",
+        "Provides each lane a bounded task and requests compact evidence with risks and unknowns",
+        "Keeps Jira writes and final STOP/GO judgment with the coordinator",
+        "Reconciles conflicting evidence before drafting",
+        "Does not duplicate research unnecessarily"
+      ]
+    },
+    {
+      "id": "human-readable-ticket",
+      "prompt": "Rewrite and update a technically correct Jira bug that is difficult for product, service, client, observability, and QA readers to scan.",
+      "expectations": [
+        "Leads with the observable problem and impact in plain language",
+        "Uses descriptive clickable Markdown links instead of naked URLs",
+        "Uses tables for repeated evidence, ownership, or scenario comparisons",
+        "Keeps sequential reproduction and acceptance criteria as steps",
+        "Moves detailed implementation evidence into a concise technical section",
+        "Avoids repetition and unexplained jargon"
+      ]
+    },
+    {
+      "id": "ask-when-authoritative-answers-are-missing",
+      "prompt": "Use $create-jira-ticket and the grill skill to create or update an integration bug. The code proves the symptom, but the current producer contract, retry ownership, and diagnostic-data policy cannot be found. Do not assume answers.",
+      "expectations": [
+        "Exhausts linked documents, related issues, repository evidence, tests, logs, and available runtime evidence before asking",
+        "Does not infer an authoritative contract from consumer code, conceptual diagrams, old tickets, or internal producer data",
+        "Asks direct questions for the missing contract, retry ownership, and data policy",
+        "Names the expected owner or authoritative source and explains what each answer changes",
+        "Asks unresolved implementation questions in chat and keeps them out of Jira unless required for handoff or requested",
+        "Creates or corrects the verified ticket when scope is clear but returns GO for ticket, STOP for implementation",
+        "Stops ticket creation and asks first when an unknown changes hierarchy, issue type, duplicate status, required fields, scope, or core meaning"
+      ]
+    },
+    {
+      "id": "minimal-human-ticket-and-evidence-boundary",
+      "prompt": "Create or update a monitoring bug using a local diagnostic archive that will not be attached. Keep the ticket narrowly focused, human-readable, and executable; ask before adding adjacent findings.",
+      "expectations": [
+        "Does not quote, name, summarize, or cite the unattached archive as Jira evidence",
+        "Uses only minimal sanitized illustrative value patterns when necessary and labels them as examples",
+        "Asks clarifying questions in chat instead of adding speculative decisions or expanding scope",
+        "Keeps parent and epic only in Jira hierarchy fields, not the description",
+        "Explains the behavior and expected monitoring outcome before technical details",
+        "Distinguishes analytics event names from property keys and values",
+        "Splits acceptance criteria into New change and Sanity or existing flows with independently testable items"
+      ]
+    }
+  ]
+}
