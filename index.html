@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A company-agnostic collection of reusable product and engineering skills.">
+  <title>Open Product &amp; Engineering Skills</title>
+  <style>
+    :root { color-scheme: light; --ink: #172033; --muted: #566176; --line: #dfe5ee; --surface: #fff; --wash: #f5f7fb; --accent: #3157c8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--wash); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 64px 0 80px; }
+    .eyebrow { color: var(--accent); font-size: .78rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 12px 0; font-size: clamp(2rem, 5vw, 3.7rem); letter-spacing: -.045em; line-height: 1.08; }
+    .intro { max-width: 700px; color: var(--muted); font-size: 1.1rem; }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 42px 0 18px; }
+    h2 { margin: 0; font-size: 1.25rem; }
+    .source { color: var(--accent); font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 14px; }
+    .card { display: block; min-height: 142px; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: inherit; text-decoration: none; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+    .card:hover, .card:focus-visible { border-color: #9aace8; box-shadow: 0 8px 24px #17203312; transform: translateY(-2px); }
+    .card:focus-visible, .source:focus-visible { outline: 3px solid #90a8ff; outline-offset: 3px; }
+    .card h3 { margin: 0 0 8px; color: var(--accent); font-size: 1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .94rem; }
+    footer { margin-top: 34px; color: var(--muted); font-size: .88rem; }
+    @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Open source collection</p>
+    <h1>Open Product &amp; Engineering Skills</h1>
+    <p class="intro">Reusable, company-agnostic workflows for product thinking, writing, design, Jira, pull requests, prototyping, verification, and knowledge management. Each skill is kept in its own top-level folder.</p>
+    <div class="bar">
+      <h2>Browse the skills</h2>
+      <a class="source" href="https://github.com/Rahulm38/skills">View repository</a>
+    </div>
+    <section class="grid" aria-label="Skills">
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/bro/SKILL.md"><h3>bro</h3><p>Restate dense responses in plain language.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/build-product-knowledge-vault/SKILL.md"><h3>build-product-knowledge-vault</h3><p>Build source-linked product and code knowledge vaults.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/building-product-prototypes/SKILL.md"><h3>building-product-prototypes</h3><p>Build staged, reviewable prototypes using the target product's design system.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/create-jira-ticket/SKILL.md"><h3>create-jira-ticket</h3><p>Investigate, draft, create, and verify Jira issues.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/diagram-design/SKILL.md"><h3>diagram-design</h3><p>Design clear product, process, architecture, data, and state diagrams.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/grill-ticket-before-code/SKILL.md"><h3>grill-ticket-before-code</h3><p>Audit a ticket against code and tests before implementation.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/humanise/SKILL.md"><h3>humanise</h3><p>Rewrite drafts in a natural, reader-appropriate voice.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/raise-pr/SKILL.md"><h3>raise-pr</h3><p>Prepare, validate, create, and verify pull requests.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/reconcile-ticket-pr-feedback/SKILL.md"><h3>reconcile-ticket-pr-feedback</h3><p>Reconcile ticket, code, test, and review evidence.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/slop-killer/SKILL.md"><h3>slop-killer</h3><p>Remove generic AI-sounding filler and repetition.</p></a>
+      <a class="card" href="https://github.com/Rahulm38/skills/blob/main/verify-and-report-jira/SKILL.md"><h3>verify-and-report-jira</h3><p>Verify changes against acceptance criteria and prepare evidence-backed Jira updates.</p></a>
+    </section>
+    <footer>Examples use generic names and synthetic values. See the repository README for the public-repo policy and collection structure.</footer>
+  </main>
+</body>
+</html>
